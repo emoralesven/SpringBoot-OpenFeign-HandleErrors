@@ -15,7 +15,7 @@ import java.util.List;
  */
 @JsonProxyFeignClient(
         name = "UserClient",
-        url = "https://jsonplaceholder.typicode.com")
+        url = "${ms.endpoints.servicios.user}")
 public interface UserClient {
 
     @GetMapping(value="/users/{id}/",produces = "application/json")

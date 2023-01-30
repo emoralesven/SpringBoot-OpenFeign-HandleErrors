@@ -24,26 +24,12 @@ public class UserController {
 
 
     @GetMapping("")
-    public List<User> consultaSaldosPorNumeroCuenta(@RequestHeader HttpHeaders headers){
+    public List<User> getUsers(@RequestHeader HttpHeaders headers){
 
         return userService.getUsers(headers);
     }
-    @GetMapping("/user2")
-    public String consultaSaldosPorNumeroCuenta2( @RequestHeader HttpHeaders headers){
-        String uri = "https://jsonplaceholder.typicode.com/users/1";
-        RestTemplate restTemplate = new RestTemplate();
-
-        User user = restTemplate.getForObject(uri, User.class);
-        System.out.println("User: " + user);
-
-        System.out.println("Userid: " + user.getId());
-        System.out.println("Name: " + user.getName());
-        System.out.println("Username: " + user.getUsername());
-        System.out.println("Email: " + user.getEmail());
-        return "User detail page.";
-    }
-    @GetMapping("/user/{id}")
-    public User consultaSaldosPorNumeroCuenta3(@PathVariable("id") Long id){
+    @GetMapping("/{id}")
+    public User getUser(@PathVariable("id") Long id){
 
         return userService.getUser(id);
     }
