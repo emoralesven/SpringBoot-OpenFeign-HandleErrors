@@ -14,19 +14,19 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(path = "post", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path = "posts", produces = MediaType.APPLICATION_JSON_VALUE)
 public class PostController {
 
     private final PostService postService;
 
 
     @GetMapping("")
-    public List<Post> getUsers(@RequestHeader HttpHeaders headers){
+    public List<Post> getPosts(@RequestHeader HttpHeaders headers){
 
         return postService.getPosts(headers);
     }
     @GetMapping("/{id}")
-    public Post getUser(@PathVariable("id") Long id){
+    public Post getPost(@PathVariable("id") Long id){
 
         return postService.getPost(id);
     }

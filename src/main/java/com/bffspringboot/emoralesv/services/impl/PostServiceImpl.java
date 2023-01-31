@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PostServiceImpl implements PostService {
 
-    private PostClient postClient;
+    private final PostClient postClient;
     @Override
     public List<Post> getPosts(HttpHeaders headers) {
         return postClient.getPosts();
