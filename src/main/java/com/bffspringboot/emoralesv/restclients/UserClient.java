@@ -15,7 +15,7 @@ import java.util.List;
  */
 @JsonProxyFeignClient(
         name = "UserClient",
-        url = "${ms.endpoints.servicios.user}")
+        url = "${ms.endpoints.servicios}")
 public interface UserClient {
 
     @GetMapping(value="/users/{id}/",produces = "application/json")
@@ -23,4 +23,6 @@ public interface UserClient {
 
     @GetMapping(value="/users",produces = "application/json")
     List<User> getUsers();
+
+
 }
