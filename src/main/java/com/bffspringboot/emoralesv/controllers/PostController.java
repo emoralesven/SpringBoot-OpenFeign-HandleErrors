@@ -30,5 +30,6 @@ public class PostController {
 
         return postService.getPost(id);
     }
+
 }
 
